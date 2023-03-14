@@ -40,7 +40,7 @@ final class Token {
         EORECORD,
 
         /** Token is a comment line. */
-        COMMENT
+        COMMENT;
     }
 
     /** length of the initial token (content-)buffer */
@@ -71,6 +71,6 @@ final class Token {
      */
     @Override
     public String toString() {
-        return type.name() + " [" + content.toString() + "]";
+        return type.name() + " [" + content + "]";
     }
 }
