@@ -17,18 +17,6 @@
 
 package org.apache.commons.csv;
 
-import static org.apache.commons.csv.Constants.BACKSLASH;
-import static org.apache.commons.csv.Constants.COMMA;
-import static org.apache.commons.csv.Constants.COMMENT;
-import static org.apache.commons.csv.Constants.CR;
-import static org.apache.commons.csv.Constants.CRLF;
-import static org.apache.commons.csv.Constants.DOUBLE_QUOTE_CHAR;
-import static org.apache.commons.csv.Constants.EMPTY;
-import static org.apache.commons.csv.Constants.LF;
-import static org.apache.commons.csv.Constants.PIPE;
-import static org.apache.commons.csv.Constants.SP;
-import static org.apache.commons.csv.Constants.TAB;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -2017,7 +2005,7 @@ public final class CSVFormat implements Serializable {
         int c;
         while (-1 != (c = bufferedReader.read())) {
             builder.append((char) c);
-            final boolean isDelimiterStart = isDelimiter((char) c, builder.toString() + new String(bufferedReader.lookAhead(delimLength - 1)), pos, delim,
+            final boolean isDelimiterStart = isDelimiter(((char)) c, builder + new String(bufferedReader.lookAhead(delimLength - 1)), pos, delim,
                     delimLength);
             if (c == CR || c == LF || c == escape || isDelimiterStart) {
                 // write out segment up until this char
